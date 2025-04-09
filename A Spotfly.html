@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: rgb(0, 0, 0);
+      font-family: sans-serif;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding:1px 30px;
+      background-color: rgb(0, 0, 0);
+    }
+
+    .left-section {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .logo {
+      width: 150px;
+      height: auto;
+    }
+
+    .center-section {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex: 1;
+      justify-content: center;
+    }
+
+    .search-logo {
+      width: 100px;
+      height: auto;
+    }
+
+    .search-bar {
+      font-size: 15px;
+      background-color: white;
+      border: none;
+      padding:15px 30px;
+      border-radius: 25px;
+      width: 200px;
+    }
+
+    .right-section {
+      display: flex;
+      gap: 10px;
+    }
+
+    .button {
+      font-family: monospace;
+      background-color: rgb(226, 226, 226);
+      padding:20px;
+      border: none;
+      border-radius:1px 25px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .button:hover {
+      transform:scale(1.2);
+      background-color: rgb(255, 255, 255);
+      box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+    }
+
+    .button1{
+      font-family: monospace;
+      background-color:rgb(207, 207, 207);
+      padding:20px;
+      border:none;
+      border-radius:1px 25px;
+      cursor:pointer;
+      transition: 0.2s;
+      width:50px;
+      display:flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 10px;
+
+    }
+
+      .album-buttons {
+      display: flex;
+      gap: 15px;
+      margin: 10px 0 20px 0;
+      flex-wrap: wrap;
+    }
+    .button1:hover{
+      transform:scale(1.2);
+      background-color: rgb(255, 255, 255);
+      box-shadow:0 4px 8px rgba(255, 255, 255,0.2);
+    }
+
+    .Library{
+      max-height:800px;
+      overflow-y:auto;
+      scrollbar-width: thin;
+      scrollbar-color: #888 #1e1e1e;
+      width: 25%;
+      background-color: #1e1e1e;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 20px;
+    }
+
+    .Library h2 {
+      margin-top: 0;
+      font-size: 18px;
+    }
+    
+    .Library audio {
+      width: 80%;
+      outline: none;
+    }
+    .text{
+      font-size:30px;
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+      text-align:left;
+      color:white;
+
+    }
+
+    .main-content {
+    display:flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    margin:0px 20px;
+    }
+
+    .Albums {
+    max-height: 840px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #888 #1e1e1e;
+    width: 70%;
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px;
+    box-sizing: border-box;
+    }
+
+    .Album-row{
+      display: flex;
+      justify-content: space-between;
+      gap:20px;
+      margin:20px;
+    }
+
+    .album-row img {
+    width: 100%;
+    max-width: 30%;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    transition: transform 0.3s ease;
+    margin:18.5px;
+    }
+    .album-row img.round {
+    border-radius: 50%;
+    }
+
+    @keyframes float-up {
+    0%   { transform: translateY(0); }
+    100% { transform: translateY(-10px); }
+    }
+
+    .album-row img:hover {
+    transform: translateY(-10px) rotate(3deg);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.7);
+    }
+
+    .links{
+      display:flex;
+      justify-content: center;
+      gap:25px;
+      margin-bottom:20px;
+    }
+
+    .links a {
+      color: #c2c2c2; 
+      text-decoration:none;
+      font-size: 16px;
+      position: relative;
+      transition: color 0.3s ease;
+      transition:transform 0.3s ease;
+    }
+
+    .links a:hover {
+      color:rgb(255, 255, 255);
+      text-shadow:rgb(255, 255, 255);
+      transform:scale(1.2);
+
+    }
+
+</style>
+</head>
+<body>
+        <div class="navbar">
+        <div class="left-section">
+        <video id="home" class="logo" autoplay muted src="Untitled 2.mp4"></video>
+        </div>
+        <div class="center-section">
+        <video class="search-logo" autoplay loop muted src="Untitled.mp4"></video>
+        <input class="search-bar" placeholder="Search">
+        </div>
+        <div class="right-section">
+        <div class="button">Explore</div>
+        <div class="button">Install</div>
+        </div>
+        </div>
+        <div class="main-content">
+        <div class="Library">
+        <h2 style="color:white; font-family: monospace; text-align: center;">Your Library</h2>
+
+          <div class="text">Rhinestone Eyes</div>
+          <img src="Rhinestone Eyes.jpg" alt="Rhinestone Eyes" style="width: 60px; height: 60px; border-radius: 10px; object-fit: cover;">
+            <audio controls src="Gorillaz - Rhinestone Eyes [Storyboard Film] (Official Music Video).mp3"></audio>
+
+            <div class="text">Arurian Dance</div>
+          <img src="Arurian dance.jpg" alt="" style="width: 60px; height: 60px; border-radius: 10px; object-fit: cover;">
+            <audio controls src="aruarian dance.mp3"></audio>
+
+            <div class="text">Nameless World</div>
+            <img src="skip_the_use_nameless_world-673761763-mmed.jpg" alt="" style="width: 60px; height: 60px; border-radius: 10px; object-fit: cover;">
+              <audio controls src="Skip The Use - Nameless World (Official Video).mp3"></audio>
+
+            <div class="text">Aces</div>
+          <img src="Aces.jpg" alt="" style="width: 60px; height: 60px; border-radius: 10px; object-fit: cover;">
+            <audio controls src="Aces.mp3"></audio>
+
+            <div class="text">Midnight sun</div>
+          <img src="MIDNIGHT-SUN.jpg" alt="" style="width: 60px; height: 60px; border-radius: 10px; object-fit: cover;">
+            <audio controls src="(Extended) Llusion X Banakula - Midnight Sun (Ramzoid Remix).mp3"></audio>
+
+            <div class="text">Redsex-Vessel</div>
+          <img src="Vessel-Redsex.png" alt="" style="width: 60px; height: 60px; border-radius: 10px; object-fit: cover;">
+            <audio controls src="Vessel - Red Sex (Re-Strung) feat_ Rakhi Singh (Official Audio).mp3"></audio>
+
+            <div class="text">Hello-OMFG</div>
+          <img src="OMFG hello.jpg" alt="" style="width: 60px; height: 60px; border-radius: 10px; object-fit: cover;">
+            <audio controls src="OMFG - Hello.mp3"></audio>
+
+            <div class="text">Everyting Black</div>
+          <img src="Everyting black.jpg" alt="" style="width: 60px; height: 60px; border-radius: 10px; object-fit: cover;">
+            <audio controls src="Unlike Pluto - Everything Black (feat. Mike Taylor) [Official Lyric Video].mp3"></audio>
+
+            <div class="text">Hope</div>
+          <img src="maxresdefault.jpg" alt="" style="width: 60px; height: 60px; border-radius: 10px; object-fit: cover;">
+            <audio controls src="Hope.mp3"></audio>
+
+            <div class="text">Riot</div>
+          <img src="riot.jpg" alt="" style="width: 60px; height: 60px; border-radius: 10px; object-fit: cover;">
+            <audio controls src="Riot.mp3"></audio>
+        </div>
+        <div class="Albums">
+          <h2 style="font-size: 24px; font-family: monospace; color: white;">Albums</h2> 
+          <div class="album-buttons">
+          <div class="button1">All</div><div class="button1">Music</div><div class="button1">Podcast</div>
+          <div class="album-row">
+            <img src="Juice_Wrld_-_Legends_Never_Die.png" alt="">
+            <img src="Kids_See_Ghosts_Cover.png" alt="">
+            <img src="artworks-KuEOeMkBLJZAVIvQ-GnFrwQ-t1080x1080.jpg" alt="">
+
+            <img src="Arurian dance.jpg" alt="">
+            <img src="Namelessworld.png" alt="">
+            <img src="Everyting black.jpg" alt="">
+
+            <div class="album-row">
+              <img class="round" src="Namelessworld.png" alt="">
+              <img class="round" src="riot.jpg" alt="">
+              <img class="round" src="Aces.jpg" alt="">
+              <div class="links">
+              <a href="#home">home</a>
+              <a href="https://www.spotify.com/in-en/about-us/contact/">About</a>
+              <a href="https://www.lifeatspotify.com/">Jobs</a>
+              <a href="https://artists.spotify.com/home">For Artists</a>
+              <a href="https://newsroom.spotify.com/">Privacy</a>
+              <a href="https://www.spotify.com/in-en/premium/#ref=spotifycom_footer_premium_individual">Terms</a>
+              <a href="https://ads.spotify.com/en-IN/">Contact</a>
+            </div>
+            <p style="color: white;"><center>&copy; 2025 Plese don't sue me spotify.Nielit Thangjam Krishan Bc2054</center></p>
+            </div>
+          </div>
+          </div>
+        </div>
+        </div>
+</body>
+</html>
